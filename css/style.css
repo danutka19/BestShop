@@ -1,0 +1,610 @@
+/*
+font-family: 'Open Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+*/
+/* pytania:
+font-family jak są różne, z jednego rodzaju to skąd wie że ma być Bold lub superbold
+display w nagłówku co powinno być, float żle po opływa, flex wtedy się rozchodzą navigacje przy rozszerzaniu?
+border left i right - zrobić dodatkową klasę i dać ją na początek?
+why nie działają buttony w sekcji cennik?
+ */
+/*podstawowy reset*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid purple;
+}
+/*stylowanie nagłówka*/
+
+.header {
+    align-items: center;
+    display: block;
+    width: 1626px;
+    background-color: #FFFFFF;
+    border-left: 1px solid rgba(0, 0, 0, 0.16);
+    border-right: 1px solid rgba(0, 0, 0, 0.16);
+    border-top: 1px solid rgba(0, 0, 0, 0.16);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.16);
+    position: fixed;
+    z-index: 2;
+
+}
+.container-header {
+    margin-right: 136px;
+    margin-left: 136px;
+    color: #08A6E4;
+    width: 1352px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-logo {
+    font-size: 32px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    align-items: center;
+}
+.main-navigation {
+    align-items: center;
+    height: 70px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.main-navigation-detail {
+    color: #A5A5A5;
+    display: block;
+    text-align: center;
+    line-height: 70px;
+    font-family: 'Open Sans', Bold, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-right: calc(92px/2);
+    padding-left: calc(92px/2);
+}
+.main-navigation-detail:hover {
+    color: #000000;
+    border-bottom: 4px solid #08A6E4;
+}
+
+/*stylowanie sekcji otwierającej*/
+/**nie schował się ołóweczek*/
+
+.open-section-logo {
+    width: 1626px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    text-align: center;
+    border-left: 1px solid rgba(0, 0, 0, 0.16);
+    border-right: 1px solid rgba(0, 0, 0, 0.16);
+}
+.open-section {
+    width: 440px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    text-align: center;
+    padding-top: 70px;
+}
+.open-photo {
+    width: 1735px;
+    height: 519px;
+}
+.open-head {
+    color: #000000;
+    font-family: "Raleway", sans-serif;
+    font-size: 49px;
+    font-weight: 500;
+}
+.open-span {
+    color: #000000;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.blue-button {
+    background-color: #08A6E4;
+    border: 1px solid #08A6E4;
+    border-radius: 49px;
+    width: 100%;
+    height: 67px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 67px;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/*stylowanie sekcji ze statystyką*/
+
+.statistics-section /*jest ok*/{
+    height: 531px;
+    width: 1626px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    border-left: 1px solid rgba(0, 0, 0, 0.16);
+    border-right: 1px solid rgba(0, 0, 0, 0.16);
+}
+.statistics-head /*jest ok*/ {
+    color: #000000;
+    font-size: 36px;
+    height: 200px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+.statistics-columns {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 331px;
+}
+.statistics {
+    width: calc(1626px/6);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 70px 0 70px;
+}
+.statistics-data {
+    font-family: "Raleway", sans-serif;
+    font-weight: 800;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 5.96px;
+    padding: 20px 0;
+}
+.statistics-img {
+    width: 70px;
+    height: 50px;
+    align-self: flex-end;
+    position: relative;
+    left: 18px;
+    top: 5px;
+}
+.statistics-span {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    color: #A5A5A5;
+    font-size: 16px;
+    text-align: center;
+}
+
+.statistics-background {
+    background-color: #FB3B64;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+
+}
+.statistics-background2 {
+    background-color: #08A6E4;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+
+}
+.statistics-background3 {
+    background-color: #55DFB4;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+
+}
+/*stylowanie sekcji benefity*/
+
+.benefits-section {
+    width: 1626px;
+    height: 1395px;
+    background-color: #F7F7F7;
+    border-left: 1px solid rgba(0, 0, 0, 0.16);
+    border-right: 1px solid rgba(0, 0, 0, 0.16);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.common {
+    width: 1124px;
+    height: 370px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+.header-common {
+    color: #000000;
+    font-family: "Raleway", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    text-align: left;
+}
+.left {
+    width: 420px;
+    height: 188px;
+    margin-left: 35px;
+    margin-right: 150px;
+}
+.right {
+    width: 420px;
+    height: 188px;
+}
+.benefits-article {
+    font-size: 16px;
+    font-family: "Open Sans",sans-serif;
+    padding: 35px 0;
+}
+.benefits-empty-div {
+    display: block;
+    height: 5px;
+    width: 330px;
+}
+.border-color {
+    border-top: 4px solid rgba(251, 59, 100, 1);
+}
+.border-color2 {
+    border-top: 4px solid rgba(8, 166, 228, 1);
+}
+.border-color3 {
+    border-top: 4px solid rgba(85, 223, 180, 1);
+}
+.div-background-1 {
+    height: 180px;
+    width: 180px;
+    background-color: #FB3B64;
+    border-radius: 41px;
+    position: relative;
+    top: 80px;
+    left: 150px;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+
+.benefits-photo-macbook {
+    width: 390px;
+    height: 220px;
+    position: relative;
+    bottom: 70px;
+    right: 50px;
+
+}
+.div-background-2 {
+    border-radius: 50%;
+    width: 320px;
+    height: 320px;
+    border: 1px solid #07ACE6;
+    background-color: #07ACE6;
+    position: relative;
+    left: 50px;
+}
+.benefits-photo-iphone {
+    width: 426px;
+    height: 328px;
+    position: relative;
+    top: 25px;
+}
+
+.div-background-3 {
+    width: 440px;
+    height: 370px;
+    border-radius: 5px;
+    border: 1px solid #55DFB4;
+    background-color: #55DFB4;
+}
+
+.empty-left-div {
+    background-color: #F7F7F7;
+    height: 370px;
+    width: 80px;
+}
+.benefits-photo-trumpet {
+    width: 75%;
+    height: 75%;
+    position: relative;
+    top: 75px;
+    left: 60px;
+}
+
+
+/*stylowanie sekcji price*/
+.pricing-section {
+    width: 1626px;
+    height: 800px;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+}
+.pricing-head {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 42px;
+    font-family: Raleway, sans-serif;
+    padding-top: 100px;
+    padding-bottom: 71px;
+    align-self: center;
+    background-color: 2px solid darkblue;
+    position: relative;
+    left: 750px;
+}
+.pricing-list {
+    border: 2px solid green;
+    width: 372px;
+    height: 461px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+}
+.pricing-head-big {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    margin: 0 180px;
+}
+.pricing-list:nth-child(1) {
+    border: 1px solid #FB3B64;
+}
+.pricing-list:nth-child(2) {
+    border: 1px solid #07ACE6;
+    height: 500px;
+    width: 405px;
+}
+.pricing-list:nth-child(3) {
+    border: 1px solid #55DFB4;
+}
+.pricing-head-small {
+    font-family: Raleway, sans-serif;
+    font-size: 20px;
+    color: #13253B;
+    font-weight: 700;
+    padding-top: 34px;
+}
+.pricing-head-price {
+    font-family: "Open Sans", sans-serif;
+    font-size: 46px;
+    color: #FB3B64;
+}
+.pricing-head-lmt {
+    font-family: "Raleway", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #13253B;
+
+}
+.pricing-head-btn {
+    width: 150px;
+    height: 50px;
+    border-radius: 23px;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    color: #FFFFFF;
+    position: relative;
+    top: 25px;
+}
+.btn-green {
+    background-color: #55DFB4;
+    border: 1px solid #55DFB4;
+}
+.btn-red {
+    background-color: #EB476E;
+    border: 1px solid #EB476E;
+}
+.btn-blue {
+    background-color: #07ACE6;
+    border: 1px solid #07ACE6;
+}
+.pricing-head-ul {
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+.pricing__item,
+.pricing__item--not {
+    padding: 10px;
+}
+.pricing__item::before {
+    content: "";
+    width: 11px;
+    height: 11px;
+    display: inline-block;
+    margin-right: 10px;
+    background-image: url("../images/Ckechmark-1.svg");
+}
+.pricing__item--not::before {
+    content: "";
+    width: 11px;
+    height: 11px;
+    display: inline-block;
+    margin-right: 10px;
+    background-image: url("../images/Close.svg");
+}
+
+/*stylowanie sekcji contact*/
+.contact-section {
+    background-color: #FFFFFF;
+    width: 1626px;
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    font-family: "Open Sans", sans-serif;
+}
+.container-contact-left {
+    background-color: white;
+    width: 440px;
+    height: 376px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.section-title {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 49px;
+    line-height: 57px;
+}
+.section-span {
+    font-weight: 400;
+    font-size: 16px;
+    padding: 22px 0 42px 0;
+}
+.contact-img {
+    height: 27px;
+    width: 27px;
+}
+.contact-address {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #A5A5A5;
+}
+.container-form {
+    height: 376px;
+    width: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form {
+    width: 440px;
+    height: 157px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #08A6E4;
+}
+.textarea {
+    padding-bottom: 57px;
+    padding-top: 30px;
+    width: 100%;
+    height: 33%;
+    box-sizing: border-box;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.16);
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+}
+input::placeholder {
+    color: #08A6E4;
+    font-size: 15px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+    text-align: 57px;
+}
+
+.checkbox {
+    color: #707070;
+    height: 157px;
+    width: 440px;
+    padding-top: 40px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+}
+.checkbox input:checked + span {
+    background: url('../images/Checkmark.svg') no-repeat center center;
+    opacity: 1;
+}
+
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkbox span {
+    height: 24px;
+    width: 24px;
+    flex-shrink: 0;
+    flex-basis: 24px;
+    border: 1px solid #95989A;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.contact-btn {
+    width: 226px;
+    height: 57px;
+    border-radius: 35px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    font-family: "Open Sans", sans-serif;
+    color: #FFFFFF;
+    /*position: relative;
+    top: 25px;*/
+    background-color: #08A6E4;
+    border: 1px solid #08A6E4;
+    align-self: flex-end;
+}
+
+/*stylowanie sekcji stopka*/
+
+.footer-section {
+    background-color: #FFFFFF;
+    width: 1626px;
+    height: 89px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 1px solid rgba(0, 0, 0, 0.16);
+    border-right: 1px solid rgba(0, 0, 0, 0.16);
+    border-left: 1px solid rgba(0, 0, 0, 0.16);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+}
+.main-logo__footer {
+    margin-left: 137px;
+    padding-top: 1rem;
+    height: 100%;
+}
+.logo__footer {
+    color: #08A6E4;
+    font-family: "Raleway", sans-serif;
+    font-size: 26px;
+    line-height: 30px;
+}
+.title-footer {
+    color: #A5A5A5;
+    font-size: 11px;
+    line-height: 15px;
+    font-family: "Open Sans", sans-serif;
+    padding-bottom: 20px;
+}
+.footer-links {
+    padding-right: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links {
+    padding: 0 25px 0 0;
+}
